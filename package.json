@@ -1,0 +1,27 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "This is Namaste React by Aniket",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamaniket58/NamasteReact.git"
+  },
+  "keywords": [],
+  "author": "Aniket",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamaniket58/NamasteReact/issues"
+  },
+  "homepage": "https://github.com/iamaniket58/NamasteReact#readme",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "browsersList":["last 2 chrome versions", "last 2 firefox versions"]
+}
