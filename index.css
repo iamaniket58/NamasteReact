@@ -1,32 +1,50 @@
-*{
+* {
     padding: 0px;
     margin: 0px;
 }
-#myId{
-    color:red
-}
-#heeader1{
-    color:pink
-}
-#heeader2{
-    color:rgb(51, 28, 145)
-}
-.user-icon{
-    /* float: right; */
-     border-radius: 50%;
-}
-.search{
-    /* margin-left: 500px;
-    margin-top:1px */
-    width:50%;
-    padding:8px;
-    font-size:16px;
-}
+
 .header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
-     background-color: #f4f4f4;
+    border: 1px solid pink;
+    padding-right: 20px;
+}
 
+.logo {
+    height: 100px;
+    width: 100px;
+}
+
+.nav-items>ul {
+    font-size: 20px;
+    display: flex;
+    list-style-type: none;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.res-card {
+    width: 200px;
+    height: 300px;
+    margin-left: 10px;
+    padding: 5px;
+    font-size: 10px;
+    margin: 10px;
+   
+}
+
+.res-card:hover {
+     cursor: pointer;   
+    border: 1px solid black;
+}
+
+.res-logo {
+    width: 100%;
+    /* height:100%; */
+}
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
 }
