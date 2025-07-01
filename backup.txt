@@ -1,0 +1,35 @@
+Episode-1 Completely Deleting index.html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Namaste React</title>
+    </head>
+    <body>
+        <div id="root">
+            <!-- <h1>Hello World</h1> -->
+        </div>
+
+        <script>
+            const heading=document.createElement("h1");
+            heading.innerHTML="Hwllo World From JavaScript";
+            const root=document.getElementById("root");
+            root.appendChild(heading)
+
+        </script>
+    </body>
+    </html>
+---------------------------------------------
+Episode 2- Removing CDN from index.html
+    <!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> -->
+----------------------------------------------
+Episode 3- App.js
+//const x = React.createElement("div", { "id": "parent" }, React.createElement("div", { "id": "child" }, [React.createElement("h1", {"id":"heeader1"}, "This is my h1 header"),React.createElement("h2",{"id":"heeader2"},"This is h2 header")]))
+const y = React.createElement("div", { "id": "parent" }, React.createElement("div", { "id": "child" }, React.createElement("h1", {"id":"heeader1"}, "This is my h1 header"),React.createElement("h2",{"id":"heeader2"},"This is Awesome header")))
+
+
+const heading = React.createElement("h2", { "id": "myId" }, "Hello from React!!")
+const root = ReactDOM.createRoot(document.getElementById("roots"));
+root.render(y);
