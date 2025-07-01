@@ -1,3 +1,7 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
 #myId{
     color:red
 }
@@ -6,4 +10,23 @@
 }
 #heeader2{
     color:rgb(51, 28, 145)
+}
+.user-icon{
+    /* float: right; */
+     border-radius: 50%;
+}
+.search{
+    /* margin-left: 500px;
+    margin-top:1px */
+    width:50%;
+    padding:8px;
+    font-size:16px;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+     background-color: #f4f4f4;
+
 }
