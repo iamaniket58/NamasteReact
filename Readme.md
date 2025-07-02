@@ -80,3 +80,17 @@ Install jsdom library
 Install @babel/preset-react - to make JSX work in test cases
 Include @babel/preset-react inside my babel config
 npm i -D @testing-library/jest-dom
+
+
+# Ways to create a UseState
+    //Way 1
+    let[ListOfRestro,setListOfRestro]=useState(restaurants)
+    
+   //Way 2
+   let arr=useState(restaurants)
+   const [ListOfRestro,setListOfRestro]=arr
+
+   //way3
+   let arr1=useState(restaurants)
+   const ListOfRestro1=arr[0];
+   const setListOfRestro1=arr[1];
