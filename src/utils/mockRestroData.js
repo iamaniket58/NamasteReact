@@ -1616,4 +1616,37 @@ let restaurants = [
         }
     }
 ]
+
+let ListOfRestro1 = [
+    {
+        info: {
+            id: "334475",
+            name: "KFC",
+            cloudinaryImageId: "RX_THUMBNAIL/IMAGES/VENDOR/2025/6/3/4716f54a-61ad-4178-8265-51066cacbbd2_43836.jpg",
+            "cuisines": [
+                "Burgers",
+                "Beverages",
+                "Cafe",
+                "Desserts"
+            ],
+            avgRating: 3.4,
+            "costForTwo": "₹400 for two",
+        }
+    },
+    {
+        info: {
+            id: "334474",
+            name: "Dominos",
+            cloudinaryImageId: "RX_THUMBNAIL/IMAGES/VENDOR/2025/6/3/4716f54a-61ad-4178-8265-51066cacbbd2_43836.jpg",
+            "cuisines": [
+                "Burgers",
+                "Beverages",
+                "Cafe",
+                "Desserts"
+            ],
+            avgRating: 4.9,
+            "costForTwo": "₹400 for two",
+        }
+    }
+];
 export default restaurants;
