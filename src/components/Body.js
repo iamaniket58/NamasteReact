@@ -14,12 +14,12 @@ const Body = () => {
         console.log("Another Restaurant")
         console.log(responseJSON?.data?.cards[1]?.card.card.gridElements.infoWithStyle.restaurants)
     }
-    if(ListOfRestro.length===0){
-        return(
-            <Shimmer/>
-        )
-    }
-    return (
+    // if(ListOfRestro.length===0){
+    //     return(
+    //         <Shimmer/>
+    //     )
+    // }
+    return ListOfRestro.length===0?<Shimmer/>: (
         
         <div className="body">
             <div className="filter">
