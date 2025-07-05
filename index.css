@@ -54,3 +54,16 @@
 .filter-btn{
     cursor: pointer;
 }
+
+.shimmer-card{
+    margin: 5px;
+    width:200px;
+    height:250px;
+    background-color: #f0f0f0;
+    /* border: 1px solid black; */
+}
+.shimmer-container{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
