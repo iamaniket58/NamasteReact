@@ -67,3 +67,8 @@
     display: flex;
     flex-wrap: wrap;
 }
+.login-btn{
+    margin-top: 2px;
+    padding:5px;
+    cursor: pointer;
+}

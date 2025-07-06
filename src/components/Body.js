@@ -19,7 +19,7 @@ const Body = () => {
     //         <Shimmer/>
     //     )
     // }
-    return ListOfRestro.length===0?<Shimmer/>: (
+    return ListOfRestro.length===0?(<Shimmer/>): (
         
         <div className="body">
             <div className="filter">
