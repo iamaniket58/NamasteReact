@@ -3,16 +3,18 @@ import { useEffect, useState } from "react";
 import restaurants from "../utils/mockRestroData";
 import Shimmer from "./Shimmer"
 const Body = () => {
-    let [ListOfRestro, setListOfRestro] = useState([])
+    let [ListOfRestro, setListOfRestro] = useState([]) //Won't be modified
+    let [FilteredRestro, setFilteredRestro] = useState([])
     const[searchText,setsearchText]=useState("")
     useEffect(() => { fetchData() }, [])
     const fetchData = async () => {
         let data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
         const responseJSON = await data.json();
         setListOfRestro(responseJSON?.data?.cards[1]?.card.card.gridElements.infoWithStyle.restaurants)
-        console.log(responseJSON);
-        console.log("Another Restaurant")
-        console.log(responseJSON?.data?.cards[1]?.card.card.gridElements.infoWithStyle.restaurants)
+        setFilteredRestro(responseJSON?.data?.cards[1]?.card.card.gridElements.infoWithStyle.restaurants)
+        // console.log(responseJSON);
+        // console.log("Another Restaurant")
+        // console.log(responseJSON?.data?.cards[1]?.card.card.gridElements.infoWithStyle.restaurants)
     }
     // if(ListOfRestro.length===0){
     //     return(
@@ -34,10 +36,10 @@ const Body = () => {
                         setsearchText(text)
 
                     }}></input>
-                    <button className="filter-btn" onClick={()=>{
+                    <button className="filterSearch" onClick={()=>{
                         console.log(searchText)
                         let fil=ListOfRestro.filter(restro=>restro.info.name.toLowerCase().includes(searchText.toLowerCase()))
-                        setListOfRestro(fil)
+                        setFilteredRestro(fil)
                     }}>Search</button>
                 </div>
                 <button className="filter-btn" onClick={() => {
@@ -54,7 +56,7 @@ const Body = () => {
                 <RestaurantCard resData={restaurants[3]} />
                 <RestaurantCard resData={restaurants[4]} /> */}
                 {
-                    ListOfRestro.map((x) => (
+                    FilteredRestro.map((x) => (
                         <RestaurantCard key={x.info.id} resData={x} />
                     ))
                 }
