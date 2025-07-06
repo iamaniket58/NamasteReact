@@ -4,7 +4,7 @@ import restaurants from "../utils/mockRestroData";
 import Shimmer from "./Shimmer"
 const Body = () => {
     let [ListOfRestro, setListOfRestro] = useState([])
-
+    const[searchText,setsearchText]=useState("")
     useEffect(() => { fetchData() }, [])
     const fetchData = async () => {
         let data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
@@ -24,18 +24,25 @@ const Body = () => {
         <div className="body">
             <div className="filter">
                 <div className="search">
-                    <input type="text" className="search-box" onChange={(event) => {
-                        console.log(ListOfRestro);
-                        let valueText=event.target.value;
-                        let filter=ListOfRestro.filter(x=>x.info.name.includes(valueText))
-                        setListOfRestro(filter)
-                        console.log('Evenet', event)
+                    <input type="text" className="search-box" value={searchText}onChange={(event) => {
+                        // console.log(ListOfRestro);
+                        // let valueText=event.target.value;
+                        // let filter=ListOfRestro.filter(x=>x.info.name.includes(valueText))
+                        // setListOfRestro(filter)
+                        // console.log('Evenet', event)
+                        let text=event.target.value;
+                        setsearchText(text)
+
                     }}></input>
-                    <button>Search</button>
+                    <button className="filter-btn" onClick={()=>{
+                        console.log(searchText)
+                        let fil=ListOfRestro.filter(restro=>restro.info.name.toLowerCase().includes(searchText.toLowerCase()))
+                        setListOfRestro(fil)
+                    }}>Search</button>
                 </div>
                 <button className="filter-btn" onClick={() => {
-                    const filtered = ListOfRestro.filter(x => x.info.avgRating >= 4.1);
-                    setListOfRestro(filtered)
+                    const filteredRestro = ListOfRestro.filter(x => x.info.avgRating >= 4.1);
+                    setListOfRestro(filteredRestro)
                 }}
                 >Top Rated Restaurants</button>
             </div>
