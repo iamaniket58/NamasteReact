@@ -3,11 +3,13 @@ import { useEffect, useState } from "react";
 import restaurants from "../utils/mockRestroData";
 import Shimmer from "./Shimmer"
 const Body = () => {
+    console.log('Body is called Called')
     let [ListOfRestro, setListOfRestro] = useState([]) //Won't be modified
     let [FilteredRestro, setFilteredRestro] = useState([])
     const[searchText,setsearchText]=useState("")
     useEffect(() => { fetchData() }, [])
     const fetchData = async () => {
+        console.log('API Called')
         let data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
         const responseJSON = await data.json();
         setListOfRestro(responseJSON?.data?.cards[1]?.card.card.gridElements.infoWithStyle.restaurants)
