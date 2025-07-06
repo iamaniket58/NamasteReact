@@ -1,8 +1,8 @@
 import { Component } from "react";
-import {CDN_URL} from "../utils/constant"
+import { CDN_URL } from "../utils/constant"
 const RestaurantCard = (props) => {
     //{ console.log(props) }
-    let{name,cuisines,avgRating,sla,costForTwo, cloudinaryImageId}=props?.resData?.info
+    let { name, cuisines, avgRating, sla, costForTwo, cloudinaryImageId } = props?.resData?.info
     return (
 
         <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>

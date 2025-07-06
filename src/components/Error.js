@@ -1,8 +1,8 @@
 import { useRouteError } from "react-router-dom"
-const Error=()=>{
-    const x=useRouteError();
+const Error = () => {
+    const x = useRouteError();
     console.log(x)
-    return(
+    return (
         <div>
             <h1>Oops.. Something went wrong</h1>
             <h2>{x.status}</h2>

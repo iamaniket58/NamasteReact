@@ -7,7 +7,7 @@ const Body = () => {
     console.log('Body is called Called')
     let [ListOfRestro, setListOfRestro] = useState([]) //Won't be modified
     let [FilteredRestro, setFilteredRestro] = useState([])
-    const[searchText,setsearchText]=useState("")
+    const [searchText, setsearchText] = useState("")
     useEffect(() => { fetchData() }, [])
     const fetchData = async () => {
         console.log('API Called')
@@ -29,19 +29,19 @@ const Body = () => {
         <div className="body">
             <div className="filter">
                 <div className="search">
-                    <input type="text" className="search-box" value={searchText}onChange={(event) => {
+                    <input type="text" className="search-box" value={searchText} onChange={(event) => {
                         // console.log(ListOfRestro);
                         // let valueText=event.target.value;
                         // let filter=ListOfRestro.filter(x=>x.info.name.includes(valueText))
                         // setListOfRestro(filter)
                         // console.log('Evenet', event)
-                        let text=event.target.value;
+                        let text = event.target.value;
                         setsearchText(text)
 
                     }}></input>
-                    <button className="filterSearch" onClick={()=>{
+                    <button className="filterSearch" onClick={() => {
                         //console.log(searchText)
-                        let fil=ListOfRestro.filter(restro=>restro.info.name.toLowerCase().includes(searchText.toLowerCase()))
+                        let fil = ListOfRestro.filter(restro => restro.info.name.toLowerCase().includes(searchText.toLowerCase()))
                         setFilteredRestro(fil)
                     }}>Search</button>
                 </div>
@@ -60,7 +60,7 @@ const Body = () => {
                 <RestaurantCard resData={restaurants[4]} /> */}
                 {
                     FilteredRestro.map((x) => (
-                       <Link key={x.info.id} to={"/restaurants/"+x.info.id}> <RestaurantCard  resData={x} /></Link>
+                        <Link key={x.info.id} to={"/restaurants/" + x.info.id}> <RestaurantCard resData={x} /></Link>
                     ))
                 }
 
