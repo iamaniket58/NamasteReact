@@ -37,18 +37,18 @@ const Body = () => {
 
                     }}></input>
                     <button className="filterSearch" onClick={()=>{
-                        console.log(searchText)
+                        //console.log(searchText)
                         let fil=ListOfRestro.filter(restro=>restro.info.name.toLowerCase().includes(searchText.toLowerCase()))
                         setFilteredRestro(fil)
                     }}>Search</button>
                 </div>
                 <button className="filter-btn" onClick={() => {
                     const filteredRestro = ListOfRestro.filter(x => x.info.avgRating >= 4.1);
-                    setListOfRestro(filteredRestro)
+                    setFilteredRestro(filteredRestro)
                 }}
                 >Top Rated Restaurants</button>
             </div>
-            {console.log('return Called')}
+            {/* {console.log('return Called')} */}
             <div className="res-container">
                 {/* <RestaurantCard resData={restaurants[0]} />
                 <RestaurantCard resData={restaurants[1]} />
