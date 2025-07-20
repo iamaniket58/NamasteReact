@@ -76,3 +76,10 @@
     display: flex;
     gap:20px
 }
+
+.user-card{
+    /* height:200px;
+    width:200px; */
+    padding :10px;
+    border:1px solid black;
+}
