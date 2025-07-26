@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import restaurants from "../utils/mockRestroData";
 import Shimmer from "./Shimmer"
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
     console.log('Body is called Called')
     let [ListOfRestro, setListOfRestro] = useState([]) //Won't be modified
@@ -24,6 +25,12 @@ const Body = () => {
     //         <Shimmer/>
     //     )
     // }
+    const onlineStatus=useOnlineStatus();
+    if(!onlineStatus){
+        return(
+            <h1>Looks like Your Offline, Check your internet Connection</h1>
+        )
+    }
     return ListOfRestro.length === 0 ? (<Shimmer />) : (
 
         <div className="body">
