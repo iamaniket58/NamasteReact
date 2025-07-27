@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard"
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard"
 import { useEffect, useState } from "react";
 import restaurants from "../utils/mockRestroData";
 import Shimmer from "./Shimmer"
@@ -9,6 +9,7 @@ const Body = () => {
     let [ListOfRestro, setListOfRestro] = useState([]) //Won't be modified
     let [FilteredRestro, setFilteredRestro] = useState([])
     const [searchText, setsearchText] = useState("")
+    const RestroCardPromoted = withPromotedLabel(RestaurantCard)
     useEffect(() => { fetchData() }, [])
     const fetchData = async () => {
         console.log('API Called')
@@ -20,6 +21,7 @@ const Body = () => {
         // console.log("Another Restaurant")
         // console.log(responseJSON?.data?.cards[1]?.card.card.gridElements.infoWithStyle.restaurants)
     }
+    console.log('ListOfRestro ', ListOfRestro)
     // if(ListOfRestro.length===0){
     //     return(
     //         <Shimmer/>
@@ -65,7 +67,11 @@ const Body = () => {
                 <RestaurantCard resData={restaurants[4]} /> */}
                 {
                     FilteredRestro.map((x) => (
-                        <Link key={x.info.id} to={"/restaurants/" + x.info.id}> <RestaurantCard resData={x} /></Link>
+                        <Link key={x.info.id} to={"/restaurants/" + x.info.id}>
+                            {!x.info?.isOpen?<RestaurantCard resData={x} />:<RestroCardPromoted resData={x}/>}
+                            
+
+                        </Link>
                     ))
                 }
 

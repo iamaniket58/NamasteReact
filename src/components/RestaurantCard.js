@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { CDN_URL } from "../utils/constant"
 const RestaurantCard = (props) => {
-    //{ console.log(props) }
+    { console.log('Props is',props) }
     let { name, cuisines, avgRating, sla, costForTwo, cloudinaryImageId } = props?.resData?.info
     return (
 
@@ -17,4 +17,16 @@ const RestaurantCard = (props) => {
         </div>
     )
 };
+
+export const withPromotedLabel = (RestaurantCard) => {
+    return (props) => {
+        return (
+            <div>
+                <label className="absolute bg-black text-white m-2 p-1 rounded-b-lg">Promoted</label>
+                <RestaurantCard {...props}/>
+            </div>
+
+        )
+    }
+}
 export default RestaurantCard;
