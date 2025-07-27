@@ -25,41 +25,39 @@ const Body = () => {
     //         <Shimmer/>
     //     )
     // }
-    const onlineStatus=useOnlineStatus();
-    if(!onlineStatus){
-        return(
+    const onlineStatus = useOnlineStatus();
+    if (!onlineStatus) {
+        return (
             <h1>Looks like Your Offline, Check your internet Connection</h1>
         )
     }
     return ListOfRestro.length === 0 ? (<Shimmer />) : (
 
         <div className="body">
-            <div className="filter">
-                <div className="search">
-                    <input type="text" className="search-box" value={searchText} onChange={(event) => {
-                        // console.log(ListOfRestro);
-                        // let valueText=event.target.value;
-                        // let filter=ListOfRestro.filter(x=>x.info.name.includes(valueText))
-                        // setListOfRestro(filter)
-                        // console.log('Evenet', event)
+            <div className="flex">
+                <div className="m-2 p-2">
+                    <input type="text" className="m-1 border border-solid border-black " value={searchText} onChange={(event) => {
                         let text = event.target.value;
                         setsearchText(text)
 
                     }}></input>
-                    <button className="filterSearch" onClick={() => {
+                    <button className="m-2 bg-green-100  cursor-pointer px-4 py-0.5 rounded-lg" onClick={() => {
                         //console.log(searchText)
                         let fil = ListOfRestro.filter(restro => restro.info.name.toLowerCase().includes(searchText.toLowerCase()))
                         setFilteredRestro(fil)
                     }}>Search</button>
                 </div>
-                <button className="filter-btn" onClick={() => {
-                    const filteredRestro = ListOfRestro.filter(x => x.info.avgRating >= 4.1);
-                    setFilteredRestro(filteredRestro)
-                }}
-                >Top Rated Restaurants</button>
+                <div className="flex items-center p-5">
+                    <button className="bg-gray-100 cursor-pointer" onClick={() => {
+                        const filteredRestro = ListOfRestro.filter(x => x.info.avgRating >= 4.1);
+                        setFilteredRestro(filteredRestro)
+                    }}
+                    >Top Rated Restaurants</button>
+                </div>
+
             </div>
             {/* {console.log('return Called')} */}
-            <div className="res-container">
+            <div className="flex flex-wrap justify-around">
                 {/* <RestaurantCard resData={restaurants[0]} />
                 <RestaurantCard resData={restaurants[1]} />
                 <RestaurantCard resData={restaurants[2]} />
