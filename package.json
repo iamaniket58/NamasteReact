@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "This is Namaste React by Aniket",
   "scripts": {
-    "start":"parcel index.html",
-    "build":"parcel build index.html",
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -22,8 +22,14 @@
     "parcel": "^2.15.4"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.1.11",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^6.11.2",
+    "tailwindcss": "^4.1.11"
   },
-  "browsersList":["last 2 chrome versions", "last 2 firefox versions"]
+  "browsersList": [
+    "last 2 chrome versions",
+    "last 2 firefox versions"
+  ]
 }
