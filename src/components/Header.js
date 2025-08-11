@@ -1,10 +1,13 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { LOGO_URL } from "../utils/constant"
 import { Link } from "react-router-dom"
 import useOnlineStatus from "../utils/useOnlineStatus"
+import UserContext from "../utils/UserContext"
 
 const Header = () => {
-    console.log('Header Called')
+    console.log('Header Called');
+    let {loggedInUser}=useContext(UserContext);
+    console.log('USER',loggedInUser)
     let [btnName, setbtnName] = useState('LogIn')
     useEffect(() => {
         console.log("UseEffect called")
@@ -29,6 +32,7 @@ const Header = () => {
                         // setbtnName(btnName)
                         setbtnName((prev) => (prev === "LogIn" ? "LogOut" : "LogIn"));
                     }}>{btnName}</button>
+                    <li className="p-3 font-bold">{loggedInUser}</li>
                 </ul>
 
             </div>
