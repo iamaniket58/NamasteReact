@@ -1,8 +1,8 @@
 import { useState } from "react"
 import ItemList from "./ItemList"
 
-const RestaurantCategory = ({data,showItems,setShowIndex}) => {
-    console.log('Propdatass', data,'Hi',showItems,'Hi2',setShowIndex)
+const RestaurantCategory = ({data,showItems,setShowIndex,dummy}) => {
+    // console.log('Propdatass', data,'Hi',showItems,'Hi2',setShowIndex)
     // const[showItems,setshowItems]=useState(false)
     const handleClick = () => {
         // showItems?setshowItems(false):setshowItems(true)
@@ -19,7 +19,7 @@ const RestaurantCategory = ({data,showItems,setShowIndex}) => {
                     <span>⬇️</span>
                 </div>
                 <div>
-                    {showItems &&<ItemList data={data?.itemCards} />}
+                    {showItems &&<ItemList data={data?.itemCards} dummy={dummy}/>}
                 </div>
             </div>
 

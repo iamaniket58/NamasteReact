@@ -7,7 +7,9 @@ import { useState } from "react";
 const RestaurantMenu = () => {
     const { resId } = useParams();
     const resInfo = useRestaurantMenu(resId)
-    const[showIndex,setShowIndex]=useState(12)
+    const[showIndex,setShowIndex]=useState(null);
+
+    let dummy="Dummy Data";
     if (resInfo === null) return <Shimmer />;
 
     const { name, cuisines, costForTwoMessage } =
@@ -38,6 +40,7 @@ const RestaurantMenu = () => {
             data={category?.card?.card}
             showItems={index==showIndex? true:false}
             setShowIndex={()=>setShowIndex(index)}
+            dummy={dummy}
             />
             )}
         </div>
